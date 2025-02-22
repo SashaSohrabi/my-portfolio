@@ -1,0 +1,6 @@
+@use './variables' as *;
+@use './animations' as *;
+
+body {
+  background-color: $base-color;
+}
