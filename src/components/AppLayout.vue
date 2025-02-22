@@ -1,7 +1,7 @@
 <template>
   <main>
     <AppHeader />
-    <main class="container my-4">
+    <main class="container">
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
           <component :is="Component" />
@@ -18,8 +18,9 @@ import AppFooter from './AppFooter.vue';
 </script>
 
 <style scoped>
-main {
-  min-height: calc(100vh - 150px); /* Adjust based on header/footer height */
+.container {
+  padding-top: 100px;
+  min-height: calc(100vh - 200px); /* Adjust based on header/footer height */
 }
 
 /* Smooth fade-in/out transition */

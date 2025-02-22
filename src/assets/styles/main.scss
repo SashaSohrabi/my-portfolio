@@ -1,6 +1,7 @@
-@use './variables' as *;
-@use './animations' as *;
-
-body {
-  background-color: $base-color;
-}
+@import './variables';
+@import './mixins';
+@import './typography';
+@import './layout';
+@import './utilities';
+@import './buttons';
+@import './animations';

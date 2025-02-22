@@ -1,10 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
-
-// Bootstrap 5 (CSS + JS with Popper)
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'normalize.css'; // Normalize styles
 
 //Font Awesome (CSS and Vue integration)
 import { library } from '@fortawesome/fontawesome-svg-core';

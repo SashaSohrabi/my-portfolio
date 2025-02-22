@@ -1,0 +1,115 @@
+/* Typography */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $font-primary;
+  font-size: 15px;
+  line-height: 1.5;
+  color: $font-color;
+  background-color: $white-color;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $font-color;
+
+  span {
+    color: $heading-highlight-color;
+  }
+}
+
+h1 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 700;
+
+  &.technologies {
+    font-weight: 500;
+    font-style: italic;
+  }
+}
+
+h5 {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h6 {
+  font-weight: 700;
+}
+
+/* Links */
+a {
+  color: $link-color;
+  transition: color 0.2s ease-in;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    border: none;
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+.panel-title a,
+.modal-body a {
+  &:hover,
+  &:focus {
+    border-bottom: 1px solid $link-hover-color;
+    text-decoration: none;
+  }
+}
+
+/* Text Utilities */
+.text-colored {
+  color: $link-color;
+}
+
+.am {
+  font-size: 17px;
+}
+
+.large {
+  font-size: 18px;
+}
+
+/* Icon Lists */
+.list-icons {
+  padding: 0;
+  margin: 20px 0;
+  list-style: none;
+  font-size: 18px;
+
+  li {
+    padding-bottom: 15px;
+  }
+}
+
+/* Title Section */
+.title {
+  margin-top: 0;
+}
