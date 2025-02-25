@@ -1,10 +1,18 @@
 <template>
   <footer>
     <div class="footer">
-      <p class="footer__content">Copyright &copy;2025 My Portfolio by Sasha Sohrabi.</p>
+      <p class="footer__content">{{ footerContent?.text }}</p>
     </div>
   </footer>
 </template>
+
+<script setup>
+import { computed } from 'vue';
+import { useContentStore } from '@/stores/contentStore';
+
+const contentStore = useContentStore();
+const footerContent = computed(() => contentStore.content.footer);
+</script>
 
 <style lang="scss">
 .footer {

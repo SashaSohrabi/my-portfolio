@@ -28,18 +28,16 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, onUnmounted, useTemplateRef } from 'vue';
+import { ref, computed, watch, onMounted, onUnmounted, useTemplateRef } from 'vue';
+import { useContentStore } from '@/stores/contentStore';
 import HamburgerToggle from '@/components/HamburgerToggle.vue';
 
 const headerRef = useTemplateRef('header');
 const isMenuOpen = ref(false);
 const isAnimating = ref(false); //Track closing animation
 
-const menuLinks = ref([
-  { name: 'Home', path: '/' },
-  { name: 'Portfolio', path: '/portfolio' },
-  { name: 'Contact Me', path: '/contact' },
-]);
+const contentStore = useContentStore();
+const menuLinks = computed(() => contentStore.content.menuLinks);
 
 watch(isMenuOpen, (newVal, oldVal) => {
   if (!newVal && oldVal) {

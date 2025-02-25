@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 import App from './App.vue';
 import router from './router';
 import 'normalize.css'; // Normalize styles
@@ -19,12 +20,16 @@ import './assets/styles/main.scss';
 
 // Create and configure the Vue app
 const app = createApp(App);
+const pinia = createPinia();
 
 // Register FontAwesome component globally
 app.component('font-awesome-icon', FontAwesomeIcon);
 
 // Use Vue Router
 app.use(router);
+
+// Use Pinia
+app.use(pinia);
 
 // Mount the Vue app
 app.mount('#app');

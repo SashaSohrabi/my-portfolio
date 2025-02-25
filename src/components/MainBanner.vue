@@ -3,27 +3,22 @@
     <div class="banner__caption">
       <div class="banner__caption-wrapper">
         <h1 class="banner__caption-title">
-          <span>{{ title }}</span>
+          <span>{{ content?.banner?.title }}</span>
         </h1>
-        <p class="banner__caption-description">{{ description }}</p>
+        <p class="banner__caption-description">{{ content?.banner?.description }}</p>
       </div>
     </div>
-    <ChevronScroll targetId="about" />
+    <ChevronScroll targetId="about">{{ content?.about?.title }}</ChevronScroll>
   </section>
 </template>
 
 <script setup>
 import ChevronScroll from '@/components/ChevronScroll.vue';
-const { title, description } = defineProps({
-  title: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-});
+import { computed } from 'vue';
+import { useContentStore } from '@/stores/contentStore';
+
+const contentStore = useContentStore();
+const content = computed(() => contentStore.content);
 </script>
 
 <style scoped lang="scss">

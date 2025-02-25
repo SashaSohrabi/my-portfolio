@@ -1,19 +1,13 @@
 <template>
   <main class="container">
-    <MainBanner :title="bannerContent.title" :description="bannerContent.description" />
+    <MainBanner />
     <AboutMe />
   </main>
 </template>
 
 <script setup>
-import { ref } from 'vue';
 import MainBanner from '@/components/MainBanner.vue';
 import AboutMe from '@/components/AboutMe.vue';
-
-const bannerContent = ref({
-  title: 'Front-End Web Developer',
-  description: 'with a passion for learning',
-});
 </script>
 
 <style scoped>
