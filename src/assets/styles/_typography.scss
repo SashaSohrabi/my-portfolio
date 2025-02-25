@@ -13,19 +13,6 @@ body {
   position: relative;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: $font-color;
-
-  span {
-    color: $heading-highlight-color;
-  }
-}
-
 h1 {
   font-size: 38px;
   font-weight: 700;
@@ -68,7 +55,7 @@ a {
 
   &:hover,
   &:focus {
-    color: $link-hover-color;
+    color: $blue-text-color;
     border: none;
     text-decoration: none;
     outline: none;
@@ -79,7 +66,7 @@ a {
 .modal-body a {
   &:hover,
   &:focus {
-    border-bottom: 1px solid $link-hover-color;
+    border-bottom: 1px solid $blue-text-color;
     text-decoration: none;
   }
 }

@@ -1,15 +1,13 @@
 <template>
-  <main>
-    <AppHeader />
-    <main class="container">
-      <router-view v-slot="{ Component }">
-        <transition name="fade" mode="out-in">
-          <component :is="Component" />
-        </transition>
-      </router-view>
-    </main>
-    <AppFooter />
-  </main>
+  <AppHeader />
+
+  <router-view v-slot="{ Component }">
+    <transition name="fade" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
+
+  <AppFooter />
 </template>
 
 <script setup>
@@ -18,15 +16,10 @@ import AppFooter from './AppFooter.vue';
 </script>
 
 <style scoped>
-.container {
-  padding-top: 100px;
-  min-height: calc(100vh - 200px); /* Adjust based on header/footer height */
-}
-
 /* Smooth fade-in/out transition */
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease;
 }
 .fade-enter-from,
 .fade-leave-to {

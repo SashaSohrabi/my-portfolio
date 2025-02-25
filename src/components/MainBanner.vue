@@ -1,0 +1,73 @@
+<template>
+  <section class="banner">
+    <div class="banner__caption">
+      <div class="banner__caption-wrapper">
+        <h1 class="banner__caption-title">
+          <span>{{ title }}</span>
+        </h1>
+        <p class="banner__caption-description">{{ description }}</p>
+      </div>
+    </div>
+    <ChevronScroll targetId="about" />
+  </section>
+</template>
+
+<script setup>
+import ChevronScroll from '@/components/ChevronScroll.vue';
+const { title, description } = defineProps({
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+});
+</script>
+
+<style scoped lang="scss">
+.banner {
+  width: 100vw;
+  height: 100vh;
+  margin-top: -100px;
+  position: relative;
+  color: $white-color;
+  background: url('@/assets/images/banner.jpg') no-repeat center center / cover;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.72);
+    content: '';
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    width: 66.66666667%;
+    z-index: 1;
+    text-align: center;
+
+    &-title {
+      font-size: 60px;
+      line-height: 1.2;
+      color: $blue-text-color;
+    }
+
+    &-description {
+      font-size: 24px;
+      color: $white-color;
+    }
+  }
+}
+.animate__animated {
+  --animate-delay: 2s;
+}
+</style>

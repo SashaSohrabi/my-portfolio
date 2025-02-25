@@ -1,0 +1,41 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 50%;
+
+  @include respond-to('small') {
+    font-size: 56.25%; // ~9px
+  }
+
+  @include respond-to('medium') {
+    font-size: 62.5%; // 10px
+  }
+
+  @include respond-to('large') {
+    font-size: 68.75%; // ~11px
+  }
+
+  @include respond-to('xlarge') {
+    font-size: 75%; // 12px
+  }
+
+  @include respond-to('xxlarge') {
+    font-size: 87.5%; // 14px
+  }
+}
+
+body {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: $link-color;
+  color: $white-color;
+}
