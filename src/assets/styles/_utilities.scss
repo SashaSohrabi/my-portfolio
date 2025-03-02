@@ -4,36 +4,3 @@
   overflow: hidden;
   height: 100vh;
 }
-
-// Animation & Visibility Helpers
-.object-non-visible {
-  opacity: 0;
-  filter: alpha(opacity=0); // For older IE support
-}
-
-.object-visible,
-.touch .object-non-visible {
-  opacity: 1;
-  filter: alpha(opacity=100) !important;
-}
-
-// Firefox-specific fixes for smoother animations
-@-moz-document url-prefix() {
-  .object-visible,
-  .touch .object-non-visible {
-    opacity: 0;
-  }
-}
-
-// Spacing Utilities
-.space {
-  padding: 20px 0;
-}
-
-.pr-10 {
-  padding-right: 10px;
-}
-
-.pl-10 {
-  padding-left: 10px;
-}
