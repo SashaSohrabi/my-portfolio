@@ -8,6 +8,8 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: $picton-blue $white;
   font-size: 50%;
 
   @include respond-to('small') {
@@ -33,6 +35,27 @@ html {
 
 body {
   box-sizing: border-box;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $picton-blue;
+    border-radius: 6px;
+    border: 3px solid $white;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $white;
+  }
+
+  /* Legacy Edge & IE */
+  @supports (-ms-ime-align: auto) {
+    scrollbar-face-color: $picton-blue;
+    scrollbar-track-color: $white;
+  }
 }
 
 ::selection {
