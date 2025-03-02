@@ -1,8 +1,6 @@
 <template>
-  <footer>
-    <div class="footer">
-      <p class="footer__content">{{ footerContent?.text }}</p>
-    </div>
+  <footer class="footer">
+    <p class="footer__content">{{ footerContent?.text }}</p>
   </footer>
 </template>
 
@@ -16,10 +14,10 @@ const footerContent = computed(() => contentStore.content.footer);
 
 <style lang="scss">
 .footer {
-  background-color: $footer-bg-color;
-  border-top: 1px solid $footer-border-color;
-  border-bottom: 1px solid $footer-border-color;
-  padding: 40px 0;
+  background-color: $alabaster;
+  border-top: 1px solid $concrete;
+  border-bottom: 1px solid $concrete;
+  padding: 3rem 0;
 
   &__content {
     margin: 0;

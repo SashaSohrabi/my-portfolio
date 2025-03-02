@@ -3,7 +3,7 @@
     <div class="chevron-scroll__chevron"></div>
     <div class="chevron-scroll__chevron"></div>
     <div class="chevron-scroll__chevron"></div>
-    <span class="chevron-scroll__text">About me</span>
+    <span class="chevron-scroll__text"><slot /></span>
   </div>
 </template>
 
@@ -27,11 +27,11 @@ const scrollToSection = () => {
 .chevron-scroll {
   position: absolute;
   z-index: 1;
-  bottom: 100px;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 100px;
+  width: 10rem;
+  height: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,7 +61,7 @@ const scrollToSection = () => {
       top: 0;
       height: 100%;
       width: 50%;
-      background: $white-color;
+      background: $white;
     }
 
     &::before {
@@ -79,8 +79,8 @@ const scrollToSection = () => {
   &__text {
     display: block;
     margin-top: 150px;
-    font-size: 12px;
-    color: $blue-text-color;
+    font-size: 1.3rem;
+    color: $picton-blue;
     text-transform: uppercase;
     white-space: nowrap;
     opacity: 0.25;

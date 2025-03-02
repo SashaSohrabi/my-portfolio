@@ -6,97 +6,70 @@ body {
 
 body {
   font-family: $font-primary;
-  font-size: 15px;
-  line-height: 1.5;
-  color: $font-color;
-  background-color: $white-color;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: $mine-shaft;
+  background-color: $white;
   position: relative;
-}
 
-h1 {
-  font-size: 38px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
+  a {
+    color: $picton-blue;
+    @include transition(color, 0.2s, ease-in);
+    font-size: 2.5rem;
+    font-weight: 300;
 
-h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-}
+    @include respond-to('medium') {
+      font-size: 1.8rem;
+    }
 
-h3 {
-  font-size: 22px;
-}
-
-h4 {
-  font-size: 18px;
-  font-weight: 700;
-
-  &.technologies {
-    font-weight: 500;
-    font-style: italic;
+    &:hover,
+    &:focus {
+      color: darken($picton-blue, 10%);
+      border: none;
+      text-decoration: none;
+      outline: none;
+    }
   }
-}
 
-h5 {
-  font-size: 16px;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-h6 {
-  font-weight: 700;
-}
-
-/* Links */
-a {
-  color: $link-color;
-  transition: color 0.2s ease-in;
-
-  &:hover,
-  &:focus {
-    color: $blue-text-color;
-    border: none;
-    text-decoration: none;
-    outline: none;
+  h1 {
+    font-size: 4.8rem;
+    font-weight: 700;
+    margin-bottom: 2.4rem;
+    line-height: 1.1;
   }
-}
 
-.panel-title a,
-.modal-body a {
-  &:hover,
-  &:focus {
-    border-bottom: 1px solid $blue-text-color;
-    text-decoration: none;
+  h2 {
+    font-size: 3.6rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    line-height: 1.2;
   }
-}
 
-/* Text Utilities */
-.text-colored {
-  color: $link-color;
-}
-
-.am {
-  font-size: 17px;
-}
-
-.large {
-  font-size: 18px;
-}
-
-/* Icon Lists */
-.list-icons {
-  padding: 0;
-  margin: 20px 0;
-  list-style: none;
-  font-size: 18px;
-
-  li {
-    padding-bottom: 15px;
+  h3 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 1.8rem;
+    line-height: 1.3;
   }
-}
 
-/* Title Section */
-.title {
-  margin-top: 0;
+  h4 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 1.6rem;
+    line-height: 1.4;
+  }
+
+  h5 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.4rem;
+    line-height: 1.5;
+  }
+
+  h6 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+  }
 }

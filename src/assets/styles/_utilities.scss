@@ -1,5 +1,10 @@
 /* Utilities & Misc */
 
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
 // Animation & Visibility Helpers
 .object-non-visible {
   opacity: 0;

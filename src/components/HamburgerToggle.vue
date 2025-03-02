@@ -2,6 +2,7 @@
   <button
     type="button"
     class="toggle-button"
+    aria-label="Toggle navigation menu"
     :class="{ 'toggle-button--active': modelValue }"
     @click="toggleMenu"
   >
@@ -25,7 +26,7 @@ const toggleMenu = () => emit('update:modelValue', !props.modelValue);
   top: 3rem;
   right: 3rem;
   z-index: 4;
-  background-color: $white-color;
+  background-color: $white;
   height: 7rem;
   width: 7rem;
   z-index: 11;
@@ -45,7 +46,7 @@ const toggleMenu = () => emit('update:modelValue', !props.modelValue);
     &::after {
       width: 3rem;
       height: 2px;
-      background-color: $font-color;
+      background-color: $mine-shaft;
       display: inline-block;
     }
 

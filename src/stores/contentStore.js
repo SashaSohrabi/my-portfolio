@@ -6,8 +6,12 @@ export const useContentStore = defineStore('content', {
   }),
   actions: {
     async fetchContent() {
-      const response = await fetch('/content.json');
-      this.content = await response.json();
+      try {
+        const response = await fetch('/content.json');
+        this.content = await response.json();
+      } catch (error) {
+        console.error('Failed to load content:', error);
+      }
     },
   },
 });

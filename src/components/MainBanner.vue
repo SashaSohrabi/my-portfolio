@@ -3,7 +3,7 @@
     <div class="banner__caption">
       <div class="banner__caption-wrapper">
         <h1 class="banner__caption-title">
-          <span>{{ content?.banner?.title }}</span>
+          {{ content?.banner?.title }}
         </h1>
         <p class="banner__caption-description">{{ content?.banner?.description }}</p>
       </div>
@@ -18,7 +18,7 @@ import { computed } from 'vue';
 import { useContentStore } from '@/stores/contentStore';
 
 const contentStore = useContentStore();
-const content = computed(() => contentStore.content);
+const content = computed(() => contentStore?.content);
 </script>
 
 <style scoped lang="scss">
@@ -27,7 +27,7 @@ const content = computed(() => contentStore.content);
   height: 100vh;
   margin-top: -100px;
   position: relative;
-  color: $white-color;
+  color: $white;
   background: url('@/assets/images/banner.jpg') no-repeat center center / cover;
 
   &::after {
@@ -51,14 +51,13 @@ const content = computed(() => contentStore.content);
     text-align: center;
 
     &-title {
-      font-size: 60px;
       line-height: 1.2;
-      color: $blue-text-color;
+      color: $picton-blue;
     }
 
     &-description {
-      font-size: 24px;
-      color: $white-color;
+      font-size: 2rem;
+      color: $white;
     }
   }
 }
