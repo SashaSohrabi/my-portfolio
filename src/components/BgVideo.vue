@@ -1,11 +1,19 @@
 <template>
   <div class="bg-video">
     <video class="bg-video__content" autoplay muted loop>
-      <source src="@/assets/videos/bg-video.mp4" type="video/mp4" />
-      <source src="@/assets/videos/bg-video.webm" type="video/webm" />
+      <source :src="aboutContent.videoUrl.mp4" type="video/mp4" />
+      <source :src="aboutContent.videoUrl.webm" type="video/webm" />
     </video>
   </div>
 </template>
+
+<script setup>
+import { computed } from 'vue';
+import { useContentStore } from '@/stores/contentStore';
+
+const contentStore = useContentStore();
+const aboutContent = computed(() => contentStore.content.about);
+</script>
 
 <style scoped lang="scss">
 .bg-video {

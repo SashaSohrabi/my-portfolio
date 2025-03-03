@@ -22,7 +22,6 @@ const isDarkHeader = ref(false);
 watch(
   route,
   (newRoute) => {
-    console.log(newRoute.name);
     isDarkHeader.value = ['ContactMe', 'Portfolio'].includes(newRoute.name);
   },
   { immediate: true },

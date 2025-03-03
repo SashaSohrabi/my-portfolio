@@ -5,11 +5,7 @@
     <div class="about-section__container">
       <div class="about-section__img-wrapper">
         <figure class="about-section__img-figure">
-          <img
-            src="@/assets/images/section-image.jpeg"
-            alt="Sasha's photo"
-            class="about-section__img"
-          />
+          <img :src="aboutContent.imageUrl" alt="Sasha's photo" class="about-section__img" />
           <figcaption class="about-section__caption">{{ aboutContent?.fullName }}</figcaption>
         </figure>
       </div>

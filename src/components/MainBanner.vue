@@ -1,5 +1,8 @@
 <template>
-  <section class="banner">
+  <section
+    class="banner"
+    :style="{ backgroundImage: `url(${content?.banner?.backgroundImageUrl})` }"
+  >
     <div class="banner__caption">
       <div class="banner__caption-wrapper">
         <h1 class="banner__caption-title">
@@ -28,7 +31,10 @@ const content = computed(() => contentStore?.content);
   margin-top: -100px;
   position: relative;
   color: $white;
-  background: url('@/assets/images/banner.jpg') no-repeat center center / cover;
+  // background: url('@/assets/images/banner.jpg') no-repeat center center / cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 
   &::after {
     position: absolute;

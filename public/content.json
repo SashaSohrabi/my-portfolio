@@ -6,7 +6,8 @@
   ],
   "banner": {
     "title": "Front-End Web Developer",
-    "description": "with a passion for learning"
+    "description": "with a passion for learning",
+    "backgroundImageUrl": "src/assets/images/banner.jpg"
   },
   "about": {
     "title": "About Me",
@@ -15,6 +16,11 @@
     "resumeButton": {
       "text": "Download My Resume",
       "fileName": "Sasha_Sohrabi_Resume.pdf"
+    },
+    "imageUrl": "src/assets/images/section-image.jpeg",
+    "videoUrl": {
+      "mp4": "src/assets/videos/bg-video.mp4",
+      "webm": "src/assets/videos/bg-video.webm"
     }
   },
   "footer": {
