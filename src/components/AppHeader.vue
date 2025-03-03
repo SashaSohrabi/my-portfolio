@@ -9,7 +9,7 @@
     />
   </Teleport>
 
-  <header class="header" ref="header">
+  <header class="header" :class="{ 'header--dark': isDarkHeader }" ref="header">
     <div class="header__wrapper">
       <NavMenu :menuLinks="menuLinks" :isMobile="false" />
     </div>
@@ -22,6 +22,13 @@ import { throttle, debounce } from 'lodash';
 import { useContentStore } from '@/stores/contentStore';
 import HamburgerToggle from '@/components/HamburgerToggle.vue';
 import NavMenu from '@/components/NavMenu.vue';
+
+defineProps({
+  isDarkHeader: {
+    type: Boolean,
+    default: false,
+  },
+});
 
 const headerRef = useTemplateRef('header');
 const isMenuOpen = ref(false);
@@ -80,6 +87,12 @@ onUnmounted(() => {
     right: 0;
     transform: translate(0, 0);
     display: block;
+  }
+
+  &--dark {
+    @include respond-to('medium') {
+      background-color: $header-bg-color--dark;
+    }
   }
 
   &__wrapper {

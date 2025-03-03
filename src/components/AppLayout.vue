@@ -1,5 +1,5 @@
 <template>
-  <AppHeader />
+  <AppHeader :is-dark-header="isDarkHeader" />
 
   <router-view v-slot="{ Component }">
     <transition name="fade" mode="out-in">
@@ -11,8 +11,22 @@
 </template>
 
 <script setup>
+import { ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
 import AppHeader from './AppHeader.vue';
 import AppFooter from './AppFooter.vue';
+
+const route = useRoute();
+const isDarkHeader = ref(false);
+
+watch(
+  route,
+  (newRoute) => {
+    console.log(newRoute.name);
+    isDarkHeader.value = ['ContactMe', 'Portfolio'].includes(newRoute.name);
+  },
+  { immediate: true },
+);
 </script>
 
 <style scoped>
