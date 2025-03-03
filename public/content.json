@@ -1,4 +1,21 @@
 {
+  "meta": {
+    "Home": {
+      "title": "Front-End Web Developer - Portfolio Website",
+      "description": "Welcome to my portfolio website showcasing my frontend development skills.",
+      "keywords": "frontend developer portfolio, Vue.js developer, React.js developer, hire frontend developer, JavaScript expert, web developer portfolio, UI/UX web developer, Sasha Sohrabi web developer"
+    },
+    "Portfolio": {
+      "title": "My Work - Frontend Projects",
+      "description": "Explore my frontend projects including Vue.js, Nuxt.js, and React work.",
+      "keywords": "frontend projects, Vue.js projects, React.js portfolio, modern web applications, JavaScript projects, UI/UX case studies, web development showcase, responsive design examples, best frontend practices, CSS animations and interactions"
+    },
+    "ContactMe": {
+      "title": "Contact Me - Get in Touch",
+      "description": "Want to discuss a project or job opportunity? Get in touch with me through my contact page.",
+      "keywords": "contact frontend developer, hire web developer, contact Sasha Sohrabi"
+    }
+  },
   "menuLinks": [
     { "name": "Home", "path": "/" },
     { "name": "Portfolio", "path": "/portfolio" },

@@ -8,6 +8,13 @@
 <script setup>
 import MainBanner from '@/components/MainBanner.vue';
 import AboutMe from '@/components/AboutMe.vue';
+import { useMetaTags } from '@/composables/useMetaTags';
+
+const props = defineProps({
+  routeName: String,
+});
+
+useMetaTags(props.routeName);
 </script>
 
 <style scoped>
