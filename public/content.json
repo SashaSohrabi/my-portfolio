@@ -16,15 +16,57 @@
       "keywords": "contact frontend developer, hire web developer, contact Sasha Sohrabi"
     }
   },
+  "projects": [
+    {
+      "id": "slicks-slices",
+      "title": "Slicks Slices",
+      "imageUrl": "src/assets/images/slicks-slices.webp",
+      "technologies": ["Gatsby.js", "Sanity CMS", "Styled Components", "GraphQL"],
+      "sourceCode": "https://github.com/SashaSohrabi/slicks-slices",
+      "description": "A modern pizza ordering platform built with Gatsby.js and Sanity.io. Features dynamic GraphQL queries, styled-components, and CMS-powered content management."
+    },
+    {
+      "id": "crwn-clothing",
+      "title": "CRWN Clothing",
+      "imageUrl": "src/assets/images/crown-clothing.webp",
+      "technologies": ["React.js", "Redux", "Firebase", "Styled Components"],
+      "sourceCode": "https://github.com/SashaSohrabi/crwn-prj",
+      "description": "An e-commerce platform built with React.js and Redux for state management. Features Firebase authentication, Stripe payments, and styled-components for a modern UI."
+    },
+    {
+      "id": "vue3-portfolio",
+      "title": "Vue 3 Portfolio",
+      "imageUrl": "src/assets/images/portfolio.webp",
+      "technologies": ["Vue 3", "Pinia", "SCSS (Sass)", "Vite"],
+      "sourceCode": "https://github.com/SashaSohrabi/my-portfolio",
+      "description": "A personal portfolio website built with Vue 3, featuring smooth animations, a modular component structure, and optimized performance using Vite. Styled with SCSS and state-managed via Pinia."
+    },
+    {
+      "id": "natours-adventure",
+      "title": "Natours Adventure",
+      "imageUrl": "src/assets/images/natours.webp",
+      "technologies": ["Gulp.js", "SCSS (Sass)", "CSS Grid & Flexbox"],
+      "sourceCode": "https://github.com/SashaSohrabi/Natours_travel-agency",
+      "description": "An interactive landing page for a hiking adventure company with CSS animations."
+    },
+    {
+      "id": "omni-food",
+      "title": "OmniFood Delivery",
+      "imageUrl": "src/assets/images/omnifood.webp",
+      "technologies": ["jQuery", "SCSS (Sass)", "CSS Grid & Flexbox"],
+      "sourceCode": "https://github.com/SashaSohrabi/omni",
+      "description": "A modern food delivery service website featuring smooth animations, jQuery-powered interactions, and a fully responsive design. Built with SCSS, CSS Grid, and Flexbox for a structured, clean layout."
+    }
+  ],
   "menuLinks": [
     { "name": "Home", "path": "/" },
     { "name": "Portfolio", "path": "/portfolio" },
     { "name": "Contact Me", "path": "/contact" }
   ],
   "banner": {
-    "title": "Front-End Web Developer",
-    "description": "with a passion for learning",
-    "backgroundImageUrl": "src/assets/images/banner.jpg"
+    "title": "Crafting Modern Web Experiences",
+    "description": "Front-End Developer | Passionate About Performance & UX",
+    "backgroundImageUrl": "src/assets/images/banner.webp"
   },
   "about": {
     "title": "About Me",
@@ -34,11 +76,19 @@
       "text": "Download My Resume",
       "fileName": "Sasha_Sohrabi_Resume.pdf"
     },
-    "imageUrl": "src/assets/images/section-image.jpeg",
+    "imageUrl": "src/assets/images/section-image.webp",
     "videoUrl": {
       "mp4": "src/assets/videos/bg-video.mp4",
       "webm": "src/assets/videos/bg-video.webm"
     }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "description": "Hover to Flip | Tap on Mobile to Reveal More Details.",
+    "backgroundImageUrl": "src/assets/images/patterned-bg-img.webp"
+  },
+  "contactMe": {
+    "backgroundImageUrl": "src/assets/images/patterned-bg-img.webp"
   },
   "footer": {
     "text": "Copyright ©2025 My Portfolio by Sasha Sohrabi."

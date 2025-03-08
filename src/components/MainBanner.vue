@@ -31,7 +31,6 @@ const content = computed(() => contentStore?.content);
   margin-top: -100px;
   position: relative;
   color: $white;
-  // background: url('@/assets/images/banner.jpg') no-repeat center center / cover;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

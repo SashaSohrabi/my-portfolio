@@ -39,7 +39,7 @@ defineProps({
       color: $picton-blue;
     }
 
-    .router-link-exact-active {
+    &.router-link-exact-active {
       color: $picton-blue;
     }
   }
