@@ -48,6 +48,7 @@ const backgroundStyle = computed(() => ({
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
+  min-width: 28rem;
   height: 40rem;
 
   &__side {
@@ -69,6 +70,7 @@ const backgroundStyle = computed(() => ({
     }
 
     &--back {
+      position: relative;
       padding: 3rem;
       color: $white;
       background-image: linear-gradient(to right bottom, $picton-blue, lighten($picton-blue, 30%));
@@ -150,6 +152,10 @@ const backgroundStyle = computed(() => ({
   &__price-value {
     font-size: 6rem;
     font-weight: 100;
+  }
+
+  @include respond-to('medium') {
+    min-width: 100%;
   }
 }
 </style>

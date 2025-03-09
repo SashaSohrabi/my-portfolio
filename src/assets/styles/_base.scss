@@ -62,3 +62,16 @@ body {
   background-color: $picton-blue;
   color: $white;
 }
+
+// Carousel styles
+.carousel__viewport {
+  min-height: 55vh;
+}
+
+.carousel__next,
+.carousel__prev {
+  border: 1px solid;
+  border-radius: 50%;
+  min-width: 5rem;
+  min-height: 5rem;
+}
