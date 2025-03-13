@@ -1,13 +1,13 @@
 import { ref, watch, onMounted, onUnmounted } from 'vue';
 
-export function useIsMobile() {
+export const useIsMobile = () => {
   const shouldUseCarousel = ref(false);
 
   const checkDevice = () => {
-    const isTouchDevice = navigator.maxTouchPoints > 0; // ✅ Detects touchscreens
+    const isTouchDevice = navigator.maxTouchPoints > 0; // Detects touchscreens
     const screenWidth = window.innerWidth;
 
-    const isMedium = screenWidth < 768; // ✅ Matches `medium`
+    const isMedium = screenWidth < 768; // Matches `medium`
 
     shouldUseCarousel.value = isMedium && isTouchDevice;
   };
@@ -23,4 +23,4 @@ export function useIsMobile() {
   });
 
   return { shouldUseCarousel };
-}
+};

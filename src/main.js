@@ -8,13 +8,10 @@ import 'normalize.css'; // Normalize styles
 //Font Awesome (CSS and Vue integration)
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons'; // Solid icons
+import { fab } from '@fortawesome/free-brands-svg-icons'; // Brand icons
 
-// Add all solid icons to the library
-library.add(fas);
-
-// Animate.css (CSS Animations)
-import 'animate.css';
+library.add(fas, fab);
 
 // Custom SCSS
 import './assets/styles/main.scss';
