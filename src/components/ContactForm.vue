@@ -37,8 +37,14 @@
       </span>
     </div>
 
-    <BaseButton type="submit" variant="secondary" class="contact-form__button">
+    <BaseButton
+      type="submit"
+      variant="secondary"
+      class="contact-form__button"
+      :disabled="isSubmitting"
+    >
       {{ props.submitButton.text }}
+      <LoaderIcon v-if="isSubmitting" :size="2.4" />
     </BaseButton>
   </form>
 </template>
@@ -46,8 +52,9 @@
 <script setup>
 import { useVuelidate } from '@vuelidate/core';
 import { required, email, minLength } from '@vuelidate/validators';
-import { reactive, computed } from 'vue';
+import { ref, reactive, computed, useTemplateRef, nextTick } from 'vue';
 import BaseButton from '@/components/BaseButton.vue';
+import LoaderIcon from '@/components/LoaderIcon.vue';
 
 const props = defineProps({
   emailAddress: {
@@ -87,11 +94,33 @@ const rules = computed(() => ({
 }));
 
 const v$ = useVuelidate(rules, form);
+const formRef = useTemplateRef('form');
+const isSubmitting = ref(false);
 
-const submitForm = () => {
+const submitForm = async () => {
   v$.value.$touch();
   if (!v$.value.$invalid) {
-    console.log('Form submitted:', form);
+    isSubmitting.value = true;
+
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      console.log('Form submitted:', form);
+
+      nextTick(() => {
+        if (formRef.value) {
+          formRef.value.blur();
+        }
+      });
+
+      form.email = '';
+      form.message = '';
+
+      v$.value.$reset();
+    } catch (error) {
+      console.error('Submission failed:', error);
+    } finally {
+      isSubmitting.value = false;
+    }
   }
 };
 </script>
@@ -165,6 +194,10 @@ const submitForm = () => {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4rem);
+  }
+
+  &__button {
+    min-width: 20rem;
   }
 
   &__error {
