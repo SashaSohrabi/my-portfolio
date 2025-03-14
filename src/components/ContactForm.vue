@@ -201,11 +201,15 @@ const submitForm = async () => {
   }
 
   &__error {
-    position: absolute;
-    bottom: 0;
-    right: 2rem;
-    text-align: right;
+    text-align: center;
     color: $sunset-orange;
+
+    @include respond-to('small') {
+      position: absolute;
+      bottom: 0;
+      right: 2rem;
+      text-align: right;
+    }
   }
 }
 </style>
