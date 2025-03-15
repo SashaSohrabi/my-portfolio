@@ -54,6 +54,7 @@ import { useVuelidate } from '@vuelidate/core';
 import { required, email, minLength } from '@vuelidate/validators';
 import { ref, reactive, computed, useTemplateRef, nextTick } from 'vue';
 import { useToast } from 'vue-toastification';
+import { useEmail } from '@/composables/useEmail';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/firebase/firebaseInit';
 import BaseButton from '@/components/BaseButton.vue';
@@ -79,6 +80,7 @@ const props = defineProps({
 });
 
 const toast = useToast();
+const { sendEmail } = useEmail();
 
 // Form state
 const form = reactive({
@@ -108,13 +110,21 @@ const submitForm = async () => {
     isSubmitting.value = true;
 
     try {
+      // Save to Firestore
       await addDoc(collection(db, 'contactMessages'), {
         email: form.email,
         message: form.message,
         timestamp: serverTimestamp(),
       });
 
-      toast.success('Message sent successfully!');
+      // Send email using EmailJS
+      const response = await sendEmail(form.email, form.message);
+
+      if (response.success) {
+        toast.success('Message sent successfully!');
+      } else {
+        toast.error('Message saved, but email notification failed.');
+      }
 
       nextTick(() => {
         if (formRef.value) {
