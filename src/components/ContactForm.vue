@@ -53,6 +53,9 @@
 import { useVuelidate } from '@vuelidate/core';
 import { required, email, minLength } from '@vuelidate/validators';
 import { ref, reactive, computed, useTemplateRef, nextTick } from 'vue';
+import { useToast } from 'vue-toastification';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '@/firebase/firebaseInit';
 import BaseButton from '@/components/BaseButton.vue';
 import LoaderIcon from '@/components/LoaderIcon.vue';
 
@@ -74,6 +77,8 @@ const props = defineProps({
     text: String,
   },
 });
+
+const toast = useToast();
 
 // Form state
 const form = reactive({
@@ -103,8 +108,13 @@ const submitForm = async () => {
     isSubmitting.value = true;
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      console.log('Form submitted:', form);
+      await addDoc(collection(db, 'contactMessages'), {
+        email: form.email,
+        message: form.message,
+        timestamp: serverTimestamp(),
+      });
+
+      toast.success('Message sent successfully!');
 
       nextTick(() => {
         if (formRef.value) {
@@ -118,6 +128,7 @@ const submitForm = async () => {
       v$.value.$reset();
     } catch (error) {
       console.error('Submission failed:', error);
+      toast.error('Failed to send message. Try again later.');
     } finally {
       isSubmitting.value = false;
     }
