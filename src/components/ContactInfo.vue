@@ -34,32 +34,30 @@ const { contactDetails, socialLinks } = defineProps({
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-}
 
-/* Contact List */
-.contact-info__list {
-  list-style: none;
-  padding: 0;
-}
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
 
-.contact-info__item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 
-/* Social Links */
-.contact-info__social {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-  padding: 0;
-}
+  &__social {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+  }
 
-.contact-info__social-item {
-  a {
-    text-decoration: none;
-    font-size: 3rem;
+  &__social-item {
+    a {
+      text-decoration: none;
+      font-size: 3rem;
+    }
   }
 }
 </style>
