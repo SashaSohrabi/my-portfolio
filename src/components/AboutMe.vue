@@ -104,12 +104,12 @@ const aboutContent = computed(() => contentStore.content.about);
     transition: all 0.5s;
   }
 
-  &__img-figure:hover &__caption {
+  &__container:hover &__caption {
     opacity: 1;
     transform: translate(-50%, -50%);
   }
 
-  &__img-figure:hover &__img {
+  &__container:hover &__img {
     transform: scale(1);
     filter: blur(3px) brightness(80%);
   }
