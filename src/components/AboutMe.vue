@@ -11,10 +11,7 @@
       </div>
       <p class="about-section__text">{{ aboutContent?.description }}</p>
       <div class="about-section__actions">
-        <BaseButton
-          :href="aboutContent?.resumeButton?.fileName"
-          target="_blank"
-          class="about-section__button"
+        <BaseButton :href="contentStore?.resumeUrl" target="_blank" class="about-section__button"
           >{{ aboutContent?.resumeButton?.text }}
           <font-awesome-icon icon="fa-solid fa-file-arrow-down"
         /></BaseButton>

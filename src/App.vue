@@ -13,7 +13,7 @@ const isLoading = ref(true);
 
 onMounted(async () => {
   if (!Object.keys(contentStore.content).length) {
-    await contentStore.fetchContent();
+    await contentStore.fetchData();
   }
 
   isLoading.value = false;
