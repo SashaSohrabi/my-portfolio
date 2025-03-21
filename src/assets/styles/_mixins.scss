@@ -1,9 +1,9 @@
 // Transition Mixin
-@mixin transition($properties: all, $duration: 0.3s, $timing: ease-in-out) {
-  -webkit-transition: $properties $duration $timing;
-  -moz-transition: $properties $duration $timing;
-  -o-transition: $properties $duration $timing;
-  transition: $properties $duration $timing;
+@mixin transition($properties: all, $duration: 0.3s, $timing: ease-in-out, $delay: 0s) {
+  -webkit-transition: $properties $duration $timing $delay;
+  -moz-transition: $properties $duration $timing $delay;
+  -o-transition: $properties $duration $timing $delay;
+  transition: $properties $duration $timing $delay;
 }
 
 @mixin respond-to($breakpoint) {

@@ -3,15 +3,21 @@
     <BgVideo />
     <h2 class="about-section__title">{{ aboutContent?.title }}</h2>
     <div class="about-section__container">
-      <div class="about-section__img-wrapper">
+      <div class="about-section__img-wrapper" :class="{ hovered: isHovered }">
         <figure class="about-section__img-figure">
           <img :src="aboutContent.imageUrl" alt="Sasha's photo" class="about-section__img" />
           <figcaption class="about-section__caption">{{ aboutContent?.fullName }}</figcaption>
         </figure>
       </div>
-      <p class="about-section__text">{{ aboutContent?.description }}</p>
+      <SeeMore v-if="isCompactTouchScreen" :text="aboutContent?.description" />
+      <p v-else class="about-section__text">{{ aboutContent?.description }}</p>
       <div class="about-section__actions">
-        <BaseButton :href="contentStore?.resumeUrl" target="_blank" class="about-section__button"
+        <BaseButton
+          :href="contentStore?.resumeUrl"
+          @mouseover="isHovered = true"
+          @mouseleave="isHovered = false"
+          target="_blank"
+          class="about-section__button"
           >{{ aboutContent?.resumeButton?.text }}
           <font-awesome-icon icon="fa-solid fa-file-arrow-down"
         /></BaseButton>
@@ -21,12 +27,16 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { ref, computed } from 'vue';
 import BgVideo from '@/components/BgVideo.vue';
+import SeeMore from '@/components/SeeMore.vue';
 import BaseButton from '@/components/BaseButton.vue';
 import { useContentStore } from '@/stores/contentStore';
+import { useScreenSize } from '@/composables/useScreenSize';
 
+const isHovered = ref(false);
 const contentStore = useContentStore();
+const { isCompactTouchScreen } = useScreenSize();
 const aboutContent = computed(() => contentStore.content.about);
 </script>
 
@@ -64,6 +74,7 @@ const aboutContent = computed(() => contentStore.content.about);
 
   &__img-wrapper {
     position: relative;
+    display: none;
     z-index: 1;
     width: 15rem;
     height: 15rem;
@@ -79,6 +90,10 @@ const aboutContent = computed(() => contentStore.content.about);
       -webkit-shape-outside: circle(50% at 50% 50%);
       shape-outside: circle(50% at 50% 50%);
       border-radius: none;
+    }
+
+    @include respond-to('medium') {
+      display: block;
     }
 
     @include respond-to('large') {
@@ -104,12 +119,12 @@ const aboutContent = computed(() => contentStore.content.about);
     transition: all 0.5s;
   }
 
-  &__container:hover &__caption {
+  &__img-wrapper.hovered &__caption {
     opacity: 1;
     transform: translate(-50%, -50%);
   }
 
-  &__container:hover &__img {
+  &__img-wrapper.hovered &__img {
     transform: scale(1);
     filter: blur(3px) brightness(80%);
   }

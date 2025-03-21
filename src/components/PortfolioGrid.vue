@@ -1,7 +1,7 @@
 <template>
   <section class="portfolio-grid">
     <!-- Show Carousel on Mobile -->
-    <Carousel v-if="shouldUseCarousel" :items-to-show="1" :wrap-around="true">
+    <Carousel v-if="isCompactTouchScreen" :items-to-show="1" :wrap-around="true">
       <Slide v-for="project in projects" :key="project.id">
         <ProjectCard v-bind="project" />
       </Slide>
@@ -20,7 +20,7 @@
 <script setup>
 import { computed } from 'vue';
 import { useContentStore } from '@/stores/contentStore';
-import { useIsMobile } from '@/composables/useIsMobile';
+import { useScreenSize } from '@/composables/useScreenSize';
 import ProjectCard from '@/components/ProjectCard.vue';
 import { Carousel, Slide, Navigation } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
@@ -28,7 +28,7 @@ import 'vue3-carousel/dist/carousel.css';
 const contentStore = useContentStore();
 const projects = computed(() => contentStore.content.projects);
 
-const { shouldUseCarousel } = useIsMobile();
+const { isCompactTouchScreen } = useScreenSize();
 </script>
 
 <style scoped lang="scss">

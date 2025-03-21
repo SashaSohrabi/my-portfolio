@@ -53,7 +53,8 @@ const buttonClasses = computed(() => [`base-button--${props.variant}`]);
   cursor: pointer;
   border: 1px solid transparent;
   box-shadow: 0 1rem 2rem rgba($black, 0.2);
-  @include transition;
+  @include transition(background-color);
+  @include transition(box-shadow, 0.4s);
 
   &--primary {
     background-color: $picton-blue;
