@@ -4,6 +4,7 @@ export const useContentStore = defineStore('content', {
   state: () => ({
     content: {},
     resumeUrl: '',
+    error: null,
   }),
   actions: {
     async fetchContent() {
@@ -20,8 +21,10 @@ export const useContentStore = defineStore('content', {
         }
 
         this.content = await response.json();
+        this.error = null;
       } catch (error) {
         console.error('Error fetching JSON:', error);
+        this.error = error;
       }
     },
 
@@ -40,8 +43,10 @@ export const useContentStore = defineStore('content', {
 
         const jsonResponse = await response.json();
         this.resumeUrl = jsonResponse.download_url;
+        this.error = null;
       } catch (error) {
         console.error('Error fetching resume:', error);
+        this.error = error;
       }
     },
 

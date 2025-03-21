@@ -1,18 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Layout from '../components/AppLayout.vue';
-import HomePage from '../views/HomePage.vue';
-import PortfolioPage from '../views/PortfolioPage.vue';
-import ContactMePage from '../views/ContactMePage.vue';
+import { useContentStore } from '@/stores/contentStore';
 
 const routes = [
   {
     path: '/',
-    component: Layout,
+    component: () => import('../components/AppLayout.vue'),
     children: [
       {
         path: '',
         name: 'Home',
-        component: HomePage,
+        component: () => import('../views/HomePage.vue'),
         meta: {
           title: 'Front-End Web Developer - Portfolio Website',
           description: 'Welcome to my portfolio website showcasing my frontend development skills.',
@@ -23,7 +20,7 @@ const routes = [
       {
         path: 'portfolio',
         name: 'Portfolio',
-        component: PortfolioPage,
+        component: () => import('../views/PortfolioPage.vue'),
         meta: {
           title: 'My Work - Frontend Projects',
           description: 'Explore my frontend projects including Vue.js, Nuxt.js, and React work.',
@@ -34,13 +31,18 @@ const routes = [
       {
         path: 'contact',
         name: 'ContactMe',
-        component: ContactMePage,
+        component: () => import('../views/ContactMePage.vue'),
         meta: {
           title: 'Contact Me - Get in Touch',
           description:
             'Want to discuss a project or job opportunity? Get in touch with me through my contact page.',
           keywords: 'contact frontend developer, hire web developer, contact Sasha Sohrabi',
         },
+      },
+      {
+        path: 'error',
+        name: 'ErrorPage',
+        component: () => import('../views/ErrorPage.vue'),
       },
       {
         path: '/:pathMatch(.*)*',
@@ -53,6 +55,16 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+});
+
+router.beforeEach((to, _, next) => {
+  const contentStore = useContentStore();
+
+  if (to.path === '/error' && !contentStore.error) {
+    next('/');
+  } else {
+    next();
+  }
 });
 
 export default router;

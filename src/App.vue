@@ -4,12 +4,16 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, computed, watchEffect } from 'vue';
+import { useRouter } from 'vue-router';
 import { useContentStore } from '@/stores/contentStore';
 import PagePreloader from '@/components/PagePreloader.vue';
 
 const contentStore = useContentStore();
+const router = useRouter();
 const isLoading = ref(true);
+
+const hasError = computed(() => !!contentStore.error);
 
 onMounted(async () => {
   if (!Object.keys(contentStore.content).length) {
@@ -17,5 +21,12 @@ onMounted(async () => {
   }
 
   isLoading.value = false;
+});
+
+watchEffect(() => {
+  if (hasError.value && router.currentRoute.value.path !== '/error') {
+    console.error('Store Error:', contentStore.error);
+    router.push('/error');
+  }
 });
 </script>
