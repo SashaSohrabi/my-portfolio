@@ -42,6 +42,10 @@ const routes = [
           keywords: 'contact frontend developer, hire web developer, contact Sasha Sohrabi',
         },
       },
+      {
+        path: '/:pathMatch(.*)*',
+        redirect: '/',
+      },
     ],
   },
 ];
