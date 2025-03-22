@@ -23,7 +23,7 @@ const scrollToSection = () => {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .chevron-scroll {
   position: absolute;
   z-index: 1;

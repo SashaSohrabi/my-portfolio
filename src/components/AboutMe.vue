@@ -40,7 +40,7 @@ const { isCompactTouchScreen } = useScreenSize();
 const aboutContent = computed(() => contentStore.content.about);
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .about-section {
   position: relative;
   padding: 6rem 3rem;

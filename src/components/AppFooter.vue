@@ -12,7 +12,7 @@ const contentStore = useContentStore();
 const footerContent = computed(() => contentStore.content.footer);
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .footer {
   background-color: $alabaster;
   border-top: 1px solid $concrete;

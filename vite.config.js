@@ -13,7 +13,6 @@ export default defineConfig({
         additionalData: `
           @import "@/assets/styles/_variables.scss";
           @import "@/assets/styles/_mixins.scss";
-          @import "@/assets/styles/_animations.scss";
         `,
       },
     },
@@ -21,6 +20,11 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+  server: {
+    hmr: {
+      overlay: false,
     },
   },
 });

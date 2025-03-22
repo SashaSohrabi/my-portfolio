@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import menuOverlay from './menuOverlay.vue';
+import menuOverlay from '@/components/MenuOverlay.vue';
 const props = defineProps(['modelValue']);
 const emit = defineEmits(['update:modelValue']);
 

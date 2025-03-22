@@ -55,6 +55,10 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior() {
+    // scroll to top on route change
+    return { top: 0 };
+  },
 });
 
 router.beforeEach((to, _, next) => {
