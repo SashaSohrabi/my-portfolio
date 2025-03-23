@@ -1,6 +1,6 @@
 <template>
   <div class="bg-video">
-    <video class="bg-video__content" autoplay muted loop>
+    <video class="bg-video__content" autoplay muted loop playsinline>
       <source :src="aboutContent.videoUrl.mp4" type="video/mp4" />
       <source :src="aboutContent.videoUrl.webm" type="video/webm" />
     </video>
