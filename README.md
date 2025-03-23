@@ -4,7 +4,7 @@ A personal portfolio built with Vue 3 and Vite — showcasing front-end skills, 
 
 ## 🔧 Technologies Used
 
-- **Vue 3** – Composition API with `<script setup lang="ts">`
+- **Vue 3** – Composition API with `<script setup>`
 - **Vite** – Fast build tool for development and production
 - **Pinia** – State management
 - **Vue Router** – SPA routing
