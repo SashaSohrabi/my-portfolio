@@ -1,6 +1,31 @@
-# vue3-portfolio
+# Vue 3 Portfolio 💻✨
 
-This template should help get you started developing with Vue 3 in Vite.
+A personal portfolio built with Vue 3 and Vite — showcasing front-end skills, responsive UI, and a functional contact form.
+
+## 🔧 Technologies Used
+
+- **Vue 3** – Composition API with `<script setup lang="ts">`
+- **Vite** – Fast build tool for development and production
+- **Pinia** – State management
+- **Vue Router** – SPA routing
+- **SCSS (Sass)** – Modular and scalable styling
+- **EmailJS** – For contact form submissions
+- **Font Awesome** – Iconography
+- **Vuelidate** – Form validation
+- **Vue Toastification** – Toast notifications
+- **VueUse Head** – Meta tags and SEO
+- **Vue3 Carousel** – For project sliders
+- **Firebase** – Optional integration for backend or hosting
+- **Lodash** – Utility functions
+- **normalize.css** – CSS normalization across browsers
+
+## 🧩 Project Features
+
+- Responsive and modern UI
+- Smooth animations and interactive components
+- Contact form with live validation and email support
+- Modular architecture with reusable components
+- Prettier and ESLint integrated for clean code formatting
 
 ## Recommended IDE Setup
 
@@ -10,7 +35,7 @@ This template should help get you started developing with Vue 3 in Vite.
 
 See [Vite Configuration Reference](https://vite.dev/config/).
 
-## Project Setup
+## 🛠 Project Setup
 
 ```sh
 npm install
