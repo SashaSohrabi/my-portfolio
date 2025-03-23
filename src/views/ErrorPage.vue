@@ -1,6 +1,6 @@
 <template>
   <div class="full-page-gif">
-    <img src="/src/assets/images/404-Error-Page.gif" alt="Loading..." />
+    <img src="/images/404-error-page.gif" alt="Loading..." />
   </div>
 </template>
 
