@@ -30,10 +30,10 @@ export const useContentStore = defineStore('content', {
 
     async fetchResumeUrl() {
       try {
-        const response = await fetch(import.meta.env.VITE_GITHUB_RESUME_DE_URL, {
+        const response = await fetch(import.meta.env.VITE_GITHUB_RESUME_URL, {
           headers: {
             Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
-            Accept: 'application/vnd.github.v3+json', // Ensure you get JSON response
+            Accept: 'application/vnd.github.v3+json',
           },
         });
 
