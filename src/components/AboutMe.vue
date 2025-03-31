@@ -13,7 +13,7 @@
       <p v-else class="about-section__text">{{ aboutContent?.description }}</p>
       <div class="about-section__actions">
         <BaseButton
-          :href="contentStore?.resumeUrl"
+          :href="aboutContent?.resumeButton?.url"
           @mouseover="isHovered = true"
           @mouseleave="isHovered = false"
           target="_blank"
