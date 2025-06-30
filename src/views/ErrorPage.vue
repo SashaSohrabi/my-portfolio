@@ -4,6 +4,23 @@
   </div>
 </template>
 
+<script setup>
+import { watchEffect, computed } from 'vue';
+import { useContentStore } from '@/stores/contentStore';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const contentStore = useContentStore();
+const hasError = computed(() => !!contentStore.error);
+
+watchEffect(() => {
+  if (!hasError.value) {
+    router.push('/');
+  }
+});
+
+</script>
+
 <style scoped lang="scss">
 .full-page-gif {
   position: fixed;

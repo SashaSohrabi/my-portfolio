@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { useContentStore } from '@/stores/contentStore';
 
 const routes = [
   {
@@ -62,9 +61,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, _, next) => {
-  const contentStore = useContentStore();
-
-  if (to.path === '/error' && !contentStore.error) {
+  if (to.path === '/error' && to.query.hasError !== 'true') {
     next('/');
   } else {
     next();

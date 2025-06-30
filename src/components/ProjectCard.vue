@@ -89,7 +89,7 @@ const backgroundStyle = computed(() => ({
 
   &__picture {
     height: 25rem;
-    background-blend-mode: color;
+    background-blend-mode: soft-light;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;

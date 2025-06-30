@@ -24,9 +24,8 @@ onMounted(async () => {
 });
 
 watchEffect(() => {
-  if (hasError.value && router.currentRoute.value.path !== '/error') {
-    console.error('Store Error:', contentStore.error);
-    router.push('/error');
+  if (hasError.value) {
+    router.push({ path: '/error', query: { hasError: 'true' } });
   }
 });
 </script>
